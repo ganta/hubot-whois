@@ -4,22 +4,21 @@
   "version": "0.0.0",
   "author": "Hideki IGARASHI <hideki.develop@gmail.com>",
   "license": "MIT",
-
-  "keywords": ["hubot","hubot-scripts"],
-
+  "keywords": [
+    "hubot",
+    "hubot-scripts"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/ganta/hubot-whois.git"
   },
-
   "bugs": {
     "url": "https://github.com/ganta/hubot-whois/issues"
   },
-
   "dependencies": {
-    "coffee-script": "1.9.3"
+    "coffee-script": "1.9.3",
+    "node-whois": "2.1.0"
   },
-
   "devDependencies": {
     "boolify-string": "0.1.0",
     "coveralls": "2.11.2",
@@ -39,9 +38,7 @@
     "power-assert": "0.11.0",
     "sinon": "1.15.3"
   },
-
   "main": "index.coffee",
-
   "scripts": {
     "test": "gulp test",
     "coveralls": "gulp test && cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
