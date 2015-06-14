@@ -1,22 +1,25 @@
 # Description
-#   A hubot script that does the things
+#   A hubot script that looks up the whois information
 #
 # Configuration:
-#   LIST_OF_ENV_VARS_TO_SET
+#   None
 #
 # Commands:
-#   hubot hello - <what the respond trigger does>
-#   orly - <what the hear trigger does>
-#
-# Notes:
-#   <optional notes required for the script>
+#   hubot whois <domain> - looks up the whois information for a given domain
 #
 # Author:
-#   Hideki IGARASHI[@<org>]
+#   Hideki IGARASHI <hideki.develop@gmail.com>
+
+whois = require 'node-whois'
 
 module.exports = (robot) ->
-  robot.respond /hello/, (msg) ->
-    msg.reply "hello!"
+  robot.respond /whois\s+(.+)/, (msg) ->
+    domain = msg.match[1]
+    domain = domain.replace(/^https?:\/\//, '') if robot.adapterName == 'slack'
 
-  robot.hear /orly/, ->
-    msg.send "yarly"
+    whois.lookup domain, (err, data) ->
+      if err
+        msg.send "Lookup failed for `#{domain}`: #{err}"
+      else
+        data = "```\n#{data}\n```" if  robot.adapterName == 'slack'
+        msg.send data
