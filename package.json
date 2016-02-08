@@ -20,7 +20,7 @@
     "whois": "2.1.5"
   },
   "devDependencies": {
-    "boolify-string": "0.1.0",
+    "boolify-string": "2.0.2",
     "coveralls": "2.11.2",
     "del": "1.2.0",
     "event-stream": "3.3.1",
