@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "coffee-script": "1.10.0",
-    "node-whois": "2.1.0"
+    "whois": "2.1.5"
   },
   "devDependencies": {
     "boolify-string": "0.1.0",

@@ -10,7 +10,7 @@
 # Author:
 #   Hideki IGARASHI <hideki.develop@gmail.com>
 
-whois = require 'node-whois'
+whois = require 'whois'
 
 module.exports = (robot) ->
   robot.respond /whois\s+(.+)/, (msg) ->
